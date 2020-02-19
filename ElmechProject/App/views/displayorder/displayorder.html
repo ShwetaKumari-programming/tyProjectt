@@ -1,0 +1,48 @@
+﻿
+<div class="container">
+    <!-- BEGIN SIDEBAR & CONTENT -->
+    <div class="row margin-bottom-40">
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-12 col-sm-12">
+            <h1>Order History</h1>
+            <div class="goods-page">
+                <div class="goods-data clearfix">
+                    <div class="table-wrapper-responsive ">
+                        <table summary="Shopping cart" class="text-center">
+                            <tr >
+                                <th class="goods-page-image">Order Id</th>
+                                <th class="goods-page-description">Order Date</th>
+                                <th class="goods-page-description" >Payment Method</th>
+                                <th class="goods-page-quantity">Total amount</th>
+                                <th class="goods-page-quantity">Confirmation</th>           
+                                <th class="goods-page-quantity">Status</th>     
+                                <th class="goods-page-quantity"></th>           
+                            </tr>                                                           
+                            <tr ng-repeat="order in Orderinfo">
+                                <td class="goods-page-image"> {{order.Id}}</td>
+                                <td class="goods-page-image"> {{order.CreatedDate | date : 'dd/MM/yyyy'}}</td>
+                                <td class="goods-page-image">{{order.PaymentMethod}}</td>
+                                <td class="goods-page-image">{{"₹ "+order.TotalAmount}}</td>
+                                <td class="goods-page-image">{{order.Confirmation}}</td>
+                                <td class="goods-page-image">{{order.StatusName}}</td>
+                                <td class="goods-page-image"><button class="btn btn-success btn-sm" ng-click="ViewCart(order.Id)">view cart</button></td>
+                            </tr>
+
+                        </table>
+                        
+                    </div>
+                </div>
+               
+
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END SIDEBAR & CONTENT -->
+
+</div>
+<style type="text/css">
+    th {
+        text-align:center;
+    }
+</style>

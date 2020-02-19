@@ -1,0 +1,88 @@
+﻿<div class="page-content">
+    <h3 class="page-title">
+        Product Master
+    </h3>
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i> Product Management table
+                </div>
+                <div class="actions">
+                    <a href="javascript:;" class="btn btn-default btn-sm" ng-click="saveproduct(products)">
+                        <i class="fa fa-plus"></i> Add
+                    </a>
+                </div>
+            </div>
+
+            <div class="portlet-body">
+
+                <div class="table-scrollable">
+                    <table class="table table-bordered table-hover custom-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Index
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Current Quantity
+                                </th>
+                                <th>
+                                    Current Price
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    Image URL
+                                </th>
+                                <th>
+
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="product in products">
+                                <td>
+                                    {{$index+1}}
+                                </td>
+                                <td>
+                                    {{product.Name}}
+                                </td>
+                                <td>
+                                    {{product.CurrentQuantity}}
+                                </td>
+                                <td>
+                                    {{product.CurrentPrice}}
+
+                                </td>
+                                <td>
+                                    {{product.Description}}
+                                </td>
+                                <td>
+                                    <img ng-src="/Content/Images/Product/{{product.ImageURL}}" class="img-responsive imag_size" />
+                                </td>
+                                <td class="w-70-px text-center">
+                                    <i class="fa fa-pencil-square-o edit-button" ng-click="saveproduct(product)"></i>
+                                    <i class="fa fa-trash-o delete-button" ng-click="Deleteproduct(product.Id)"></i>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+    </div>
+</div>
+<style type="text/css">
+    .imag_size {
+            max-width: 75px;
+    }
+</style>

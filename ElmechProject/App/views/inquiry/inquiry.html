@@ -1,0 +1,161 @@
+﻿<div class="container">
+    <!-- BEGIN CONTENT -->
+    <div class="row margin-bottom-40">
+        <div class="content-form-page">
+            <div class="row margin-bottom-40">
+                <div class="col-md-1 col-sm-1">
+                </div>
+                <div class="col-md-10 col-sm-8">
+
+                    <form role="form" name="inquiryform" class="form-horizontal form-without-legend">
+                        <div class=" row margin-top-20">
+                            <h1>Inquiry Details</h1>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="first-name"> Subject <span class="require">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" name="subjectname" class="form-control" ng-model="Inquiry.subject" required>
+                                <span ng-show="inquiryform.subjectname.$touched && inquiryform.subjectname.$invalid" class="validationMsg">Enter subject value</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="first-name">Details <span class="require">*</span></label>
+                            <div class="col-lg-8">
+                                <textarea class="form-control" name="detailsname" ng-model="Inquiry.details" rows="6" required></textarea>
+                                <span ng-show="inquiryform.detailsname.$touched && inquiryform.detailsname.$invalid" class="validationMsg">Enter details value</span>
+                            </div>
+                        </div>
+                        <div class=" row margin-top-20">
+                            <h1> Contact Information</h1>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="first-name">First Name <span class="require">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" id="first-name" class="form-control" name="FirstName" ng-model="Inquiry.firstname" ng-trim="false" ng-pattern="/^[a-zA-Z]+$/" required>
+
+                                <span ng-show="inquiryform.FirstName.$dirty && inquiryform.FirstName.$error.pattern" class="validationMsg">Numbers not allow</span>
+                                <span ng-show="inquiryform.FirstName.$touched && inquiryform.FirstName.$invalid" class="validationMsg">Enter FirstName</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="last-name">Last Name <span class="require">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" id="first-name" class="form-control" name="LastName" ng-model="Inquiry.lastname" ng-trim="false" ng-pattern="/^[a-zA-Z]+$/" required>
+                                <span ng-show="inquiryform.LastName.$dirty && inquiryform.LastName.$error.pattern" class="validationMsg">Numbers not allow</span>
+                                <span ng-show="inquiryform.LastName.$touched && inquiryform.LastName.$invalid" class="validationMsg">Enter LastName</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="email">Your Company Name <span class="require">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" id="email" class="form-control" name="CompanyName" ng-model="Inquiry.companyname" ng-trim="false" required>
+                                <span ng-show="inquiryform.CompanyName.$touched && inquiryform.CompanyName.$invalid" class="validationMsg">Enter Company Name</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="email">E-Mail <span class="require">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" id="email" class="form-control" name="EmailName" ng-model="Inquiry.email" ng-trim="false" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+                                <span ng-show="inquiryform.EmailName.$dirty && inquiryform.EmailName.$error.pattern" class="validationMsg">Enter Valid Email</span>
+                                <span ng-show="inquiryform.EmailName.$touched && inquiryform.EmailName.$invalid" class="validationMsg">Enter Email</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="telephone">Telephone <span class="require">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" id="telephone" class="form-control" name="telephonename" ng-model="Inquiry.telephone" ng-trim="false" ng-minlength="10" ng-maxlength="10" required>
+                                <span ng-show="inquiryform.telephonename.$touched && inquiryform.telephonename.$invalid || inquiryform.telephonename.$error.number" class="validationMsg"> valid telephone number is required</span>
+                                <span ng-show="((inquiryform.telephonename.$error.minlength || inquiryform.telephonename.$error.maxlength) &&  inquiryform.telephonename.$dirty) " class="validationMsg">phoneNumber should be in digits</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">State <span class="require">*</span></label>
+                            <div class="col-md-8">
+                                <select class="form-control" name="StateName" nd-model="Inquiry.state" required>
+                                    <option value="">Select State</option>
+                                    <option value="Andaman & Nicobar Islands">Andaman & Nicobar Islands</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Dadra & Nagar Haveli">Dadra & Nagar Haveli</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Daman & Diu">Daman & Diu</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Lakshadweep Islands">Lakshadweep Islands</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Pondicherry">Pondicherry</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </select>
+                                <span ng-show="inquiryform.StaeName.$touched && inquiryform.StateName.$valid">Select state</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="city">City <span class="require">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" id="city" class="form-control" name="cityName" ng-model="Inquiry.city" ng-trim="false" ng-pattern="/^[a-zA-Z]+$/" required>
+                                <span ng-show="inquiryform.cityName.$dirty && inquiryform.cityName.$error.pattern" class="validationMsg">Numbers not allow</span>
+                                <span ng-show="inquiryform.cityName.$touched && inquiryform.cityName.$invalid" class="validationMsg">Enter City</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-8 col-md-offset-2 padding-left-0 padding-top-20">
+                                <button class="btn btn-primary" type="submit" ng-disabled="inquiryform.$invalid" ng-click="save()">Submit</button>
+                                <button class="btn btn-primary" type="reset" ng-click="reset()">Cancel</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="col-md-1 col-sm-1">
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        Layout.init();
+        Layout.initOWL();
+        LayersliderInit.initLayerSlider();
+        Layout.initImageZoom();
+        Layout.initTouchspin();
+        Layout.initTwitter();
+    });
+</script>
+<style type="text/css">
+    .inquiry-data {
+        font-size: 20px;
+        font-family: Calibri;
+    }
+     .validationMsg {
+        color: red !important;
+    }
+
+</style>

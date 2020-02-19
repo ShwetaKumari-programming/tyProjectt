@@ -1,0 +1,29 @@
+﻿
+<div class="container">
+    <div class="row margin-bottom-35 ">
+        <div class="col-md-3 col-sm-3" ng-repeat="catalog in catalogs">
+            <div class="product-item">
+                <div class="pi-img-wrapper">
+                    <img ng-src="Content/catalogs/{{catalog.Thumbnail}}" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                        <a class="btn btn-default cursor-pointer " ng-click="open(catalog.PDFurl)">open</a>
+                    </div>
+                </div>
+              
+                <h3><a ng-click="open(catalog.PDFurl)">{{catalog.Name}}</a></h3>
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        Layout.init();
+        Layout.initOWL();
+        LayersliderInit.initLayerSlider();
+        Layout.initImageZoom();
+        Layout.initTouchspin();
+        Layout.initTwitter();
+    });
+</script>

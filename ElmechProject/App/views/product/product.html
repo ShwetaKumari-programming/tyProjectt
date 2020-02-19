@@ -1,0 +1,47 @@
+﻿<div class="container">
+    <div class="row margin-bottom-35 " ng-repeat="product in products">
+        <!-- BEGIN TWO PRODUCTS -->
+        <div class="col-md-12 two-items-bottom-items">
+            <h2>{{product.Name}}</h2>
+            <div class="owl-carousel owl-carousel4">
+                <div ng-repeat="subproduct in product.products track by $index">
+                    <div class="product-item">
+                        <div class="pi-img-wrapper">
+                            <img ng-src="/Content/Images/Product/{{subproduct.ImageURL}}" class="img-responsive" alt="Motors">
+                            <div>
+                                <a href="/Content/Images/Product-large/{{subproduct.ImageURL}}" class="btn btn-default fancybox-button">Zoom</a>
+                                <!--<a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>-->
+                            </div>
+                        </div>
+                        <h3><a href="shop-item.html">{{subproduct.Name}}</a></h3>
+                        <div class="pi-price">{{"₹"+ subproduct.CurrentPrice }}</div>
+                        <a href="javascript:;" class="btn btn-default add2cart" ng-click="addToCart(subproduct)">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function readyPage() {
+        console.log(1);
+        Layout.init();
+        Layout.initOWL();
+        LayersliderInit.initLayerSlider();
+        Layout.initImageZoom();
+        Layout.initTouchspin();
+        Layout.initTwitter();
+    }
+    jQuery(document).ready(function () {
+        //readyPage();
+    });
+</script>
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button">OK</button>
+        <button class="btn btn-warning" type="button">Cancel</button>
+    </div>
+</script>

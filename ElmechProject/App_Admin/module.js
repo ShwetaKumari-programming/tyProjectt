@@ -1,0 +1,1 @@
+﻿angular.module("elmechadmin", ['ui.router', 'ui.bootstrap', 'security']);

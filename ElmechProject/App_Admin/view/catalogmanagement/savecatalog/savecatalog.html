@@ -1,0 +1,69 @@
+﻿<div class="page-content">
+    <h3>Catalog Details</h3>
+    <!-- BEGIN PAGE CONTENT-->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <form class="form-horizontal form-row-seperated" action="#">
+                <div class="portlet light">
+
+                    <div class="portlet-body">
+                        <div class="tabbable">
+
+                            <div class="tab-content no-space">
+                                <div class="tab-pane active" id="tab_general">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">
+                                                Name: <span class="required">
+                                                    *
+                                                </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" ng-model="catalog.Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">
+                                                Pdf URL: <span class="required">
+                                                    *
+                                                </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type='file' ng-model-instant
+                                                       onchange="angular.element(this).scope().pdfUpload(event)"
+                                                       multiple />
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">
+                                                Thumbnail: <span class="required">
+                                                    *
+                                                </span>
+                                            </label>
+                                            <div class="col-md-10">
+                                                <input type='file' ng-model-instant
+                                                       onchange="angular.element(this).scope().imageUpload(event)"
+                                                       multiple />
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="form-group">
+                                            <div class="col-md-2"></div>
+                                            <button class="btn btn-success" type="button" ng-click="save()">Submit</button>
+                                            <button class="btn btn-success" type="button" ng-click="cancel()">Cancel</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT-->
+</div>

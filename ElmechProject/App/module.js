@@ -1,0 +1,1 @@
+﻿angular.module("elmech", ['ui.router', 'ui.bootstrap', 'security']);

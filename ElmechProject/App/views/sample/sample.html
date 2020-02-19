@@ -1,0 +1,26 @@
+﻿<div class="goods-page">
+    <div class="goods-data clearfix">
+        <div class="table-wrapper-responsive ">
+            <table summary="Shopping cart" class="text-center">
+                <tr>
+                    <th class="goods-page-image">Id</th>
+                    <th class="goods-page-description">Name</th>
+                    <th class="goods-page-description">Address</th>
+                    <th class="goods-page-quantity">Telephone</th>
+                   
+                </tr>
+                <tr ng-repeat="order in Orderinfo">
+                    <td class="goods-page-image"> {{Sinfo.Id}}</td>
+                    <td class="goods-page-image"> {{Sinfo.Name}}</td>
+                    <td class="goods-page-image">{{Sinfo.Address}}</td>
+                    <td class="goods-page-image">{{Sinfo.Telephone}}</td>
+                   
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+
+
+</div>

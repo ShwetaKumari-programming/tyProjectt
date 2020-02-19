@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>Admin</h2>*@
+<html ng-app="elmechadmin">
+<head>
+    <meta charset="utf-8" />
+    <title>Elmech Industries</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+    <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+    <!-- BEGIN:File Upload Plugin CSS files-->
+    <link href="/assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet" />
+    <link href="/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" />
+    <link href="/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
+    <!-- END:File Upload Plugin CSS files-->
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="/assets/admin/pages/css/inbox.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/admin/layout2/css/layout.css" rel="stylesheet" type="text/css" />
+    <link id="style_color" href="/assets/admin/layout2/css/themes/grey.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/admin/layout2/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/admin/pages/css/login.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+        .add-button {
+            margin-top: 10px;
+        }
+
+        .edit-button {
+            color: #0a11ff;
+            cursor: pointer;
+            padding-right: 10px;
+        }
+
+        .delete-button {
+            color: #f10606;
+            cursor: pointer;
+        }
+
+        .w-100-px {
+            width: 100px !important;
+        }
+
+        .w-70-px {
+            width: 70px !important;
+        }
+
+        .custom-table thead tr th {
+            background-color: #DDD;
+            color: #666;
+        }
+        .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+            border: 1px solid #ada8a8;
+        }
+    </style>
+</head>
+<body ng-class="{'page-boxed page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo':isLoggedIn,'login':!isLoggedIn} " ng-controller="AppController">
+    <div ng-if="isLoggedIn" >
+        <div data-ng-include="'/App_Admin/view/layout/master.html'"></div>
+    </div>
+    <div ng-if="!isLoggedIn" data-ui-view ></div>
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+    <script src="/assets/global/plugins/respond.min.js"></script>
+    <script src="/assets/global/plugins/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN: Page level plugins -->
+    <script src="/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
+    <!-- BEGIN:File Upload Plugin JS files-->
+    <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <!-- The Templates plugin is included to render the upload/download listings -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/vendor/load-image.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js"></script>
+    <!-- blueimp Gallery script -->
+    <script src="/assets/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js"></script>
+    <!-- The File Upload audio preview plugin -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js"></script>
+    <!-- The File Upload video preview plugin -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
+    <!-- The File Upload user interface plugin -->
+    <script src="/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-route.min.js"></script>
+    <script src="/Scripts/angular.js"></script>
+    <script src="/Scripts/angular-ui-router.min.js"></script>
+    <script src="/Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="/Scripts/angular-spa-security.js"></script>
+    <!-- The main application script -->
+    <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
+    <!--[if (gte IE 8)&(lt IE 10)]>
+        <script src="/assets/global/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js"></script>
+        <![endif]-->
+    <!-- END:File Upload Plugin JS files-->
+    <!-- END: Page level plugins -->
+    <script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
+
+    <script src="/assets/admin/layout2/scripts/layout.js" type="text/javascript"></script>
+    <script src="/assets/admin/layout2/scripts/demo.js" type="text/javascript"></script>
+    <script src="/assets/admin/pages/scripts/inbox.js" type="text/javascript"></script>
+
+    <script src="/App_Admin/module.js"></script>
+    <script src="/App_Admin/core/commonFactory.js"></script>
+    <script src="/App_Admin/core/routeConfigurator.js"></script>
+    <script src="/App_Admin/core/appController.js"></script>
+    <script src="/App_Admin/view/login/LoginController.js"></script>
+    <script src="/App_Admin/view/catalogmanagement/CatalogManagementController.js"></script>
+    <script src="/App_Admin/view/categorymaster/CategoryMasterController.js"></script>
+    <script src="/App_Admin/view/inquirymanagement/InquiryManagementController.js"></script>
+
+    <script src="/App_Admin/view/ordermanagement/OrderManagementController.js"></script>
+    <script src="/App_Admin/view/productmaster/ProductMasterController.js"></script>
+    <script src="/App_Admin/view/usermanagement/UserManagementController.js"></script>
+    <script src="/App_Admin/view/productmaster/save-product/SaveProductController.js"></script>
+    
+
+    <script src="/App_Admin/view/catalogmanagement/savecatalog/SaveCatalogController.js"></script>
+    <script src="/App_Admin/view/categorymaster/savecategory/SaveCategoryController.js"></script>
+    <script src="/App_Admin/view/inquirymanagement/inquiryresponse/InquiryResponseController.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            // initiate layout and plugins
+            Metronic.init(); // init metronic core components
+            Layout.init(); // init current layout
+            Demo.init(); // init demo features
+            Inbox.init();
+        });
+    </script>
+    </body>
+</html>

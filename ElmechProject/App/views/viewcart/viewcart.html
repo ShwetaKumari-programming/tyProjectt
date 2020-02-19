@@ -1,0 +1,79 @@
+﻿
+<div class="container">
+    <!-- BEGIN SIDEBAR & CONTENT -->
+    <div class="row margin-bottom-40">
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-12 col-sm-12">
+            <h1>Shopping cart</h1>
+            <div class="panel panel-default">
+                <div class="panel-collapse confirm-content">
+                    <div class="panel-body row">
+                        <div class="col-md-12 ">
+                            <div class="table-wrapper-responsive">
+                                <table style="text-align:center;">
+                                    <tr style="font-size:20px;">
+                                        <th class="checkout-description" width="225px;" style="text-align:center;">Image</th>
+                                        <th class="checkout-description" width="225px;" style="text-align:center;">Name</th>
+                                        <th class="checkout-description" width="225px;" style="text-align:center;">Quantity</th>
+                                        <th class="checkout-total" width="225px;" style="text-align:center;">price</th>
+                                        <th class="checkout-total" width="225px;" style="text-align:center;">SubTotal</th>
+                                    </tr>
+                                    <tr ng-repeat="order in Orderinfo.items" style="font-size:15px;">
+                                        <td class="checkout-image">
+                                            <a href="javascript:;">
+                                                <img src="/Content/Images/Product/{{order.ImageURL}}">
+                                            </a>
+                                        </td>
+                                        <td class="checkout-description">
+                                            <a href="javascript:;">{{order.Name}}</a>
+                                        </td>
+                                        <td class="checkout-description"><span> {{order.Quantity}} </span></td>
+                                        <td class="checkout-total">X {{"₹ "+order.CurrentPrice}}</td>
+                                        <td class="checkout-total"><strong>{{"₹ "+order.Amount}}</strong></td>
+
+                                    </tr>
+
+                                </table>
+                                <div class="checkout-total-block" style="width: 360px;" >
+                                    <ul style="font-size:20px;">
+                                        <li class="checkout-total-price">
+                                            <em>Total</em>
+                                            <strong class="price"  style="font-size:15px;">{{"₹ "+Orderinfo.orderInfoView.TotalAmount}}</strong>
+                                        </li>
+                                        <li class="checkout-total-price">
+                                            <em>Payment Method</em>
+                                            <strong class="price"  style="font-size:15px;">{{Orderinfo.orderInfoView.PaymentMethod}}</strong>
+                                        </li>
+                                        <li class="checkout-total-price">
+                                            <em>Status</em>
+                                            <strong class="price"  style="font-size:15px;">{{Orderinfo.orderInfoView.StatusName}}</strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END SIDEBAR & CONTENT -->
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        Layout.init();
+        Layout.initOWL();
+        Layout.initTwitter();
+        Layout.initImageZoom();
+        Layout.initTouchspin();
+        Layout.initUniform();
+    })
+</script>
+<style type="text/css">
+    .qty {
+        width: 40px;
+        height: 25px;
+        text-align: center;
+    }
+</style>

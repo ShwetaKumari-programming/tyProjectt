@@ -1,0 +1,78 @@
+﻿<div class="page-content">
+
+    <h3 class="page-title">
+        Order Management
+    </h3>
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i> Order Management Table
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr class="active">
+                                <th>
+                                    Index
+                                </th>
+                                <th>
+                                   Payment Method 
+                                </th>
+                                <th>
+                                    Total Amount
+                                </th>
+                                <th>
+                                   Confirmation
+                                </th>
+                                <th>
+                                   User Id
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="order in Orderinfo">
+                                <td>
+                                    {{$index+1}}
+                                </td>
+                                <td>
+                                    {{order.PaymentMethod}}
+                                </td>
+                                <td>
+                                    {{order.TotalAmount}}
+                                </td>
+                                <td>
+                                    {{order.Confirmation}}
+                                </td>
+                                <td>
+                                    {{order.UserId}}
+                                </td>
+                                <td>
+                                    {{order.Status}}
+                                </td>
+                              
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+    </div>
+</div>
